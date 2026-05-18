@@ -162,32 +162,17 @@ Enable:
 
 ## Step 1
 ```text
-Open The app and do the setup as directed in app
+Open The app and do the setup as directed in app and pair using
+pairing code in notification
+```
 
-## Step 2
-Enter the pairing code in  ADB AppControl app notification.
-
-The app will connect wirelessly to your phone using Android Wireless Debugging.
-
----
-
-# Run Phantom Process Fix
-
-After connecting:
-
-## Step 1
+## Step 2 After connecting:
 Open the:
 ```text
-⋮ Three Dots Menu
+⋮ Three Dots Menu and open console
 ```
 
-## Step 2
-Open:
-```text
-Console
-```
-
-## Step 3
+## Step 4
 Copy-paste this command:
 
 ```bash
@@ -201,6 +186,8 @@ Then press Enter.
 # Restart Your Phone 🔄
 
 After running the command:
+- You can turn off Developer Options, Wireless Debugging, USB Debugging
+  and unimstall **ADB App Control App**
 - Restart your device once
 - Open Termux again
 - UbuntuX will work properly now
@@ -256,7 +243,7 @@ yourname
 Example:
 
 ```text
-1234
+your password 
 ```
 
 The installer automatically:
@@ -297,13 +284,13 @@ This installs all apps :
 After installation:
 
 ```bash
-ubuntux
+UbuntuX
 ```
 
 UbuntuX automatically:
 - Starts PulseAudio
 - Starts Termux:X11
-- Starts VirGL renderer
+- Starts VirGL Hardware Acceleration 
 - Launches XFCE desktop
 
 ---
