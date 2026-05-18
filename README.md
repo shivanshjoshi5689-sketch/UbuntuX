@@ -437,16 +437,11 @@ For best performance:
 
 # Screenshots 📸
 
-Add screenshots here.
-
-Examples:
 - Desktop
 - ![Desktop](Screenshots/s1.jpg)
 - VS Code
 - BlueJ
-- Firefox
-- macOS Theme
-- Dock
+- macOS Theme & Dock
 
 ---
 
