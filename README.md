@@ -199,14 +199,13 @@ After running the command:
 ## Clone UbuntuX Repository
 
 ```bash
-pkg update -y
+yes | pkg up 
 pkg install git -y
 
 git clone https://github.com/shivanshjoshi5689-sketch/UbuntuX.git
-cd ubuntux
+cd UbuntuX
 
-chmod +x setup.sh
-bash setup.sh
+bash UbuntuX/setup.sh
 ```
 
 ---
