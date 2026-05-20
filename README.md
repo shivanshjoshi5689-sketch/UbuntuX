@@ -187,7 +187,7 @@ Then press Enter.
 
 After running the command:
 - You can turn off Developer Options, Wireless Debugging, USB Debugging
-  and unimstall **ADB App Control App**
+  and uninstall **ADB App Control App**
 - Restart your device once
 - Open Termux again
 - UbuntuX will work properly now
@@ -296,6 +296,8 @@ This installs all apps :
 
 # VS Code Installation
 It will ask for Java in VS Code
+|Option|Choice|
+|---|---|
 |1|YES|
 |2|NO|
 Enter 1 to install JDK for Java and 2 for denying
