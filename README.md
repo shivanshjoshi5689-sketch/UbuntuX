@@ -199,20 +199,29 @@ After running the command:
 ## Setup Storage
 ```bash
 termux-setup-storage
+```
+```bash
 mv ~/storage/shared ~
+```
+```bash
 rm -rf storage
+```
+```bash
 mv shared Storage
 ```
 
 ## Clone UbuntuX Repository
 
 ```bash
-yes | pkg up 
+yes | pkg up
+```
+```bash
 pkg install git -y
-
+```
+```bash
 git clone https://github.com/techydude-ubuntux/UbuntuX.git
-cd UbuntuX
-
+```
+```bash
 bash UbuntuX/setup.sh
 ```
 
