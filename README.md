@@ -351,17 +351,17 @@ For best performance:
 
 # Screenshots 📸
 
-- Desktop
+## Desktop
 ![s1](Screenshots/s1.jpg)
-- macOS Theme & DocK
+## macOS Theme & DocK
 ![s2](Screenshots/s2.jpg)
 ![s3](Screenshots/s3.jpg)
-- Installed Apps (VS Code, Firefox, VLC, etc.)
+## Installed Apps (VS Code, Firefox, VLC, etc.)
 ![s4](Screenshots/s4.jpg)
--  Utilities 
+## Utilities 
 ![s6](Screenshots/s6.jpg)
 ![s7](Screenshots/s7.jpg)
-- About OS
+## About OS
 ![s5](Screenshots/s5.jpg)
   
 ---
