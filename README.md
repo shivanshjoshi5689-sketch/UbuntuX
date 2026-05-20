@@ -45,6 +45,7 @@ The aim of UbuntuX is to provide a clean, fast, and easy Linux setup on Android 
 
 # Install Required Apps 📥
 
+
 ## 1. Install Termux
 
 ### GitHub
@@ -52,12 +53,15 @@ https://github.com/termux/termux-app/releases/download/v0.118.3/termux-app_v0.11
 
 > Do NOT install Termux from Play Store because it is outdated.
 
+
 ## 2. Install Termux:X11
 
 ### GitHub
 https://github.com/termux/termux-x11/releases/download/nightly/app-universal-debug.apk
 
+
 ## Install ADB AppControl App
+
 ### Official Website
 https://adbappcontrol.com/en/mobile/
 
@@ -75,23 +79,23 @@ This may cause:
 - Audio stopping
 - Ubuntu session randomly exiting
 
-You should apply this fix before using UbuntuX.
+> You should apply this fix before using UbuntuX.
 
 ---
 
 # Enable Required Android Settings
 
-> Step 1: Open Settings → About Phone
-> Step 2: Tap Build Number 7 times to enable Developer Options
-> Step 3: Connect to Wifi and turn on USB Debugging and Wireless Debugging
-> Step 3: Open The app and do the setup as directed in app.
-> Step 4: After connecting Open the: Three Dots Menu and open console
-> Step 5: Copy-paste this command and press Enter.
+-Step 1: Open Settings → About Phone
+- Step 2: Tap Build Number 7 times to enable Developer Options
+- Step 3: Connect to Wifi and turn on USB Debugging and Wireless Debugging
+- Step 3: Open The app and do the setup as directed in app.
+- Step 4: After connecting Open the: Three Dots Menu and open console
+- Step 5: Copy-paste this command and press Enter.
 ```bash
 /system/bin/device_config put activity_manager max_phantom_processes 10000
 ```
 #### After running the command:
-- You can turn off Developer Options, Wireless Debugging, USB Debugging
+> You can turn off Developer Options, Wireless Debugging, USB Debugging
   and uninstall **ADB App Control App**
  
 ---
@@ -227,21 +231,21 @@ Enter choices: 1 2 3 4 5 6 7 8 9 10
 
 # Starting UbuntuX ▶️
 
-- To launch UbuntuX
+> To launch UbuntuX
 
-> Type in Termux:
+- Type in Termux:
 ```bash
 UbuntuX
 ```
-- It will launch the desktop environment.
+It will launch the desktop environment.
 
 ---
 
 # Exit UbuntuX
 
-- To close UbuntuX:
+> To close UbuntuX:
 
-> Type in Termux (only):
+- Type in Termux (only):
 ```bash
 logout
 ```
@@ -249,8 +253,8 @@ logout
 
 # VS Code Fix 🛠️
 
-- If VS Code does not launch correctly
-> Do right click on VS code and paste this in command section:
+> If VS Code does not launch correctly
+- Do right click on VS code and paste this in command section:
 
 ```bash
 code --no-sandbox
