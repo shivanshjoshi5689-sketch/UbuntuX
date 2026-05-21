@@ -83,7 +83,7 @@ This may cause:
 - Step 2: Tap Build Number 7 times to enable Developer Options
 - Step 3: Connect to Wifi and turn on USB Debugging and Wireless Debugging
 - Step 3: Open The app and do the setup as directed in app.
-- Step 4: After connecting Open the: Three Dots Menu and open console
+- Step 4: After connecting Open the: Applications Menu beside three dots and open console!
 - Step 5: Copy-paste this command and press Enter.
 ```bash
 /system/bin/device_config put activity_manager max_phantom_processes 10000
