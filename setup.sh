@@ -39,6 +39,8 @@ if [[ "$TERMUX_VERSION" == googleplay* ]]; then
 
 fi
 }
+
+andro() {
 android_version_code=$(getprop ro.system.build.version.release)
 if (( $android_version_code >= 12 )); then
     sleep 1
@@ -47,6 +49,7 @@ if (( $android_version_code >= 12 )); then
     echo -e "${G} To fix signal 9 issue:\n ${B}Follow the steps given on ${C}UBUNTU${R}X ${G}github repository at topic:\n ${B}Phantom Process Fix${W}"
     sleep 2
 fi
+}
 
 UBUNTU_DIR="$PREFIX/var/lib/proot-distro/containers/ubuntu/rootfs"
 dir() {
@@ -134,6 +137,7 @@ bash OS.sh
 }
 banner
 play
+andro
 dir
 package
 distro
