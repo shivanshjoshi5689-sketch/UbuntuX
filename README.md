@@ -296,7 +296,8 @@ Termux:X11 → Preferences
 - Hide display cutout → `ON`
 - Keep Screen On → `ON`
 
-> Do NOT change pointer settings.
+### Pointer
+- Apply display scale factor to touchpad → `OFF`
 
 ---
 
