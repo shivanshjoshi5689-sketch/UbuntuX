@@ -11,20 +11,19 @@ banner() {
 clear
 wid=$(stty size | cut -d ' ' -f 2)
 if (( wid  >= 66 )); then
-echo -e "${C}"
-echo     " ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗ ${R} ██╗  ██╗${W}"
+echo "${C} ██╗   ██╗██████╗ ██╗   ██╗███╗   ██╗████████╗██╗   ██╗ ${R} ██╗  ██╗${W}"
 echo "${C} ██║   ██║██╔══██╗██║   ██║████╗  ██║╚══██╔══╝██║   ██║ ${R} ╚██╗██╔╝${W}"
 echo "${C} ██║   ██║██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║ ${R}  ╚███╔╝ ${W}"
 echo "${C} ██║   ██║██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║ ${R}  ██╔██╗ ${W}"
 echo "${C} ╚██████╔╝██████╔╝╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝ ${R} ██╔╝ ██╗${W}"
 echo "${C}  ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝  ${R} ╚═╝  ╚═╝${W}"
-echo -e "${B}   UbuntuX - Minimal Termux Ubuntu - By Techy Dude${W}"
+echo -e "${B}   UbuntuX 🚀 - Minimal Termux Ubuntu - Techy Dude${W}"
 else
-text="UBUNTUX - By Techy Dude"
+text="UbuntuX 🚀 - By Techy Dude"
 pad=$(( (wid - ${#text}) / 2 ))
 (( pad < 0 )) && pad=0
 printf "%*s" "$pad" ""
-echo -e "${C}Ubuntu${R}X🚀 ${G}-${B} By Techy Dude${W}"
+echo -e "${C}Ubuntu${R}X 🚀 ${G}-${B} Techy Dude${W}"
 fi
 }
 
@@ -134,7 +133,7 @@ package() {
    apt purge --autoremove -y
    yes | apt update
    yes | apt upgrade
-   echo -e "${R} [${W}-${R}]${C} Checking required packages...${W}"
+   echo -e "\n${R} [${W}-${R}]${C} Checking required packages...${W}"
    packs=(
   xfce4
   xfce4-terminal
@@ -159,7 +158,7 @@ package() {
 
 install_apt() {
   for apt in "$@"; do
-  [[ `command -v $apt` ]] && echo -e "${Y} ${apt} is already Installed!${W}" || {
+  [[ `command -v $apt` ]] && echo -e "\n${Y} ${apt} is already Installed!${W}" || {
    echo -e "\n${R} [${W}-${R}]${G} Installing package : ${Y}${apt}${W}"
    apt-get install ${apt} -y --no-install-recommends
 }
@@ -167,7 +166,7 @@ install_apt() {
 }
 
 install_vscode() {
-[[ $(command -v code) ]] && echo "${Y} VSCode is already Installed!${W}" || {
+[[ $(command -v code) ]] && echo "\n${Y} VSCode is already Installed!${W}" || {
 banner
 echo -e "\n${R} [${W}-${R}]${C} Installing VS Code...${W}"
 curl -fsSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
@@ -186,7 +185,7 @@ echo -e "\n${R} [${W}-${R}]${C} VS code sucessfully installed!${W}"
 }
 
 install_firefox() {
-[[ $(command -v firefox) ]] && echo "${Y} Firefox is already Installed!${W}\n" || {
+[[ $(command -v firefox) ]] && echo "\n${Y} Firefox is already Installed!${W}" || {
 banner
 echo -e "\n${R} [${W}-${R}]${C} Installing Firefox...${W}"
 rm -f /etc/apt/sources.list.d/*mozilla* && rm -f /etc/apt/sources.list.d/*firefox*
@@ -206,12 +205,12 @@ echo -e "\n${R} [${W}-${R}]${C} Firefox sucessfully installed!${W}"
 install_bluej() {
 BLUEJ_FILE=$(ls "$term"/../home/UbuntuX/patches/BlueJ*.deb 2>/dev/null | head -n 1)
 
-[[ $(command -v bluej) ]] && echo "${Y} BlueJ is already Installed!${W}\n" || {
+[[ $(command -v bluej) ]] && echo "\n${Y} BlueJ is already Installed!${W}" || {
   banner
   echo -e "\n${R} [${W}-${R}]${C} Installing BlueJ...${W}"
   wget -O "$term"/../home/UbuntuX/patches/BlueJ-linux-arm64-5.5.0.deb https://www.bluej.org/download/files/BlueJ-linux-arm64-5.5.0.deb
   if [ -z "$BLUEJ_FILE" ]; then
-  echo -e "❌ ${R}No BlueJ .deb file found!${W}"
+  echo -e "\n❌ ${R}No BlueJ .deb file found!${W}"
   return 1
 fi
 
@@ -220,9 +219,9 @@ fi
     dpkg -i "$BLUEJ_FILE" || apt --fix-broken install -y
     sleep 1
     if dpkg -s bluej >/dev/null 2>&1; then
-        echo -e "${G}BlueJ Installed Successfully${W}\n"
+        echo -e "\n${R} [${W}-${R}]${C} BlueJ Installed Successfully${W}"
     else
-        echo -e "❌${R}BlueJ installation failed!${W}"
+        echo -e "\n❌${R}BlueJ installation failed!${W}"
     fi
   }
 }
@@ -266,7 +265,7 @@ config() {
   )
 apt install -y --no-install-recommends "${theme_packs[@]}"
   banner
-echo -e "${R} [${W}-${R}]${C} Downloading Required Files..\n${W}"
+echo -e "\n${R} [${W}-${R}]${C} Downloading Required Files..\n${W}"
    rm -rf /usr/share/backgrounds
 sleep 1
    rm -rf /usr/share/applications
@@ -275,13 +274,13 @@ sleep 1
 sleep 1
    rm -rf /usr/share/xfce4/backdrops/
 sleep 1
-   echo -e "${R} [${W}-${R}]${C} Installing icons and themes..${W}"
+   echo -e "\n${R} [${W}-${R}]${C} Installing icons and themes..${W}"
 sleep 1
    tar -xvpzf $term/../home/UbuntuX/patches/p.tar.gz -C / >/dev/null 2>&1
 sleep 1
    tar -xzpvf $term/../home/UbuntuX/patches/config.tar.gz -C /home/$user/
 sleep 1
-   echo -e "${R} [${W}-${R}]${C} Purging Unnecessary Files..${W}"
+   echo -e "\n${R} [${W}-${R}]${C} Purging Unnecessary Files..${W}"
    src="/usr/share/applications"
 
   FILES=( "panel-desktop-handler.desktop"
@@ -303,10 +302,10 @@ sleep 1
    rem_theme
    rem_icon
 
-   echo -e "${R} [${W}-${R}]${C} Rebuilding Font Cache..\n${W}"
+   echo -e "\n${R} [${W}-${R}]${C} Rebuilding Font Cache..\n${W}"
    fc-cache -fv
 
-   echo -e "${R} [${W}-${R}]${C} Upgrading the System..\n${W}"
+   echo -e "\n${R} [${W}-${R}]${C} Upgrading the System..\n${W}"
    apt update
    yes | apt upgrade
    apt clean
@@ -328,7 +327,7 @@ install_menu() {
         ${Y} Example: 1 2 3 4
 EOF
 
-    read -p "${R} [${G}~${R}]${Y} Enter choices: ${G}" choices
+    read -p "\n${R} [${G}~${R}]${Y} Enter choices: ${G}" choices
     echo
 
     for opt in $choices; do
@@ -373,7 +372,7 @@ ${Y} Example:${W} 1 2 3 4
 
 EOF
 
-read -p "${R}[${G}~${R}]${Y} Enter choices: ${G}" hh
+read -p "\n${R} [${G}~${R}]${Y} Enter choices: ${G}" hh
 echo
 
 for ht in $hh; do
