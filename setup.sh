@@ -102,16 +102,13 @@ distro() {
         exit 1
     fi
 
-    proot-distro install ubuntu:questing
+    proot-distro install ubuntu:questing >/dev/null 2>&1
     termux-reload-settings
 
     cp ~/UbuntuX/OS.sh /$UBUNTU_DIR/root/
 
-    if [[ -d "$UBUNTU_DIR" ]]; then
-        echo -e "${R} [${W}-${R}]${G} Installed Successfully !!${W}"
-    else
+    if [[ ! -d "$UBUNTU_DIR" ]]; then
         echo -e "${R} [${W}-${R}]${R} Error Installing Distro !${W}"
-        exit 1
     fi
 }
 
