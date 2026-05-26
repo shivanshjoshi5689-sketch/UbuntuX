@@ -108,6 +108,7 @@ export MESA_GL_VERSION_OVERRIDE=3.0
 export MESA_GLES_VERSION_OVERRIDE=3.0
 unset vblank_mode
 export TERM=xterm-256color
+export LANG=C.UTF-8
 export DISPLAY=:0
 dbus-launch --exit-with-session xfce4-session & } >/dev/null 2>&1
 EOF
