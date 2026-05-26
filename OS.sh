@@ -230,7 +230,7 @@ rem_theme() {
   theme=(Bright Daloa Emacs Moheli Retro Smoke)
   for rmi in "${theme[@]}"; do
   type -p "$rmi" &>/dev/null || {
-  rm -rf /usr/share/themes/"$rmi"
+  rm -rf /usr/share/themes/"$rmi" >/dev/null 2>&1
   }
 done
 }
@@ -239,7 +239,7 @@ rem_icon() {
   fonts=(hicolor LoginIcons ubuntu-mono-light)
   for rmf in "${fonts[@]}"; do
   type -p "$rmf" &>/dev/null || {
-  rm -rf /usr/share/icons/"$rmf"
+  rm -rf /usr/share/icons/"$rmf" >/dev/null 2>&1
   }
   done
 }
@@ -266,19 +266,19 @@ config() {
 apt install -y --no-install-recommends "${theme_packs[@]}"
   banner
 echo -e "\n${R} [${W}-${R}]${C} Downloading Required Files..\n${W}"
-   rm -rf /usr/share/backgrounds
+   rm -rf /usr/share/backgrounds >/dev/null 2>&1
 sleep 1
-   rm -rf /usr/share/applications
+   rm -rf /usr/share/applications >/dev/null 2>&1
 sleep 1
-   rm -rf /usr/share/backdrops/xfce/
+   rm -rf /usr/share/backdrops/xfce/ >/dev/null 2>&1
 sleep 1
-   rm -rf /usr/share/xfce4/backdrops/
+   rm -rf /usr/share/xfce4/backdrops/ >/dev/null 2>&1
 sleep 1
    echo -e "\n${R} [${W}-${R}]${C} Installing icons and themes..\n${W}"
 sleep 1
    tar -xvpzf $term/../home/UbuntuX/patches/p.tar.gz -C / >/dev/null 2>&1
 sleep 1
-   tar -xzpvf $term/../home/UbuntuX/patches/config.tar.gz -C /home/$user/
+   tar -xzpvf $term/../home/UbuntuX/patches/config.tar.gz -C /home/$user/ >/dev/null 2>&1
 sleep 1
    echo -e "\n${R} [${W}-${R}]${C} Purging Unnecessary Files..\n${W}"
    src="/usr/share/applications"
@@ -295,21 +295,20 @@ sleep 1
           "xfce4-web-browser.desktop" )
 
    for file in "${FILES[@]}"; do
-   echo "Deleting $file..."
-   rm "$src/$file"
+   rm "$src/$file" >/dev/null 2>&1
    done
    cp -r $term/../home/Storage /home/$user/
-   rem_theme
-   rem_icon
+   rem_theme 
+   rem_icon 
 
    echo -e "\n${R} [${W}-${R}]${C} Rebuilding Font Cache..\n${W}"
-   fc-cache -fv
+   fc-cache -fv >/dev/null 2>&1
 
    echo -e "\n${R} [${W}-${R}]${C} Upgrading the System..\n${W}"
    apt update
-   yes | apt upgrade
-   apt clean
-   yes | apt autoremove
+   yes | apt upgrade >/dev/null 2>&1
+   apt clean >/dev/null 2>&1
+   yes | apt autoremove >/dev/null 2>&1
 
 dbus-launch plank >/dev/null 2>&1
 }
