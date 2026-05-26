@@ -276,9 +276,9 @@ sleep 1
 sleep 1
    echo -e "\n${R} [${W}-${R}]${C} Installing icons and themes..\n${W}"
 sleep 1
-   tar -xvpzf $term/../home/UbuntuX/patches/p.tar.gz -C / >/dev/null 2>&1
+   tar -xf $term/../home/UbuntuX/patches/p.tar.gz -C / \ || echo -e "\n${R}❌ Icon and Theme Installation failed!${W}\n"
 sleep 1
-   tar -xzpvf $term/../home/UbuntuX/patches/config.tar.gz -C /home/$user/ >/dev/null 2>&1
+   tar -xf $term/../home/UbuntuX/patches/config.tar.gz -C /home/$user/ \ || echo -e "\n${R}❌ Config Installation failed!${W}\n"
 sleep 1
    echo -e "\n${R} [${W}-${R}]${C} Purging Unnecessary Files..\n${W}"
    src="/usr/share/applications"
@@ -484,7 +484,7 @@ EOF
 
     echo -e "${C}══════════════════════════════════════════════════════${W}"
     else
-    echo -e "${R}❌ Ubuntu installation failed!${W}"
+    echo -e "\n${R}❌ Ubuntu installation failed!${W}"
     exit 1
     fi
 }
