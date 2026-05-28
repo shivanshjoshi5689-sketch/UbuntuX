@@ -274,6 +274,12 @@ sleep 1
 sleep 1
    rm -rf /usr/share/xfce4/backdrops/ >/dev/null 2>&1
 sleep 1
+   rm -rf /usr/share/icons >/dev/null 2>&1
+sleep 1
+   rm -rf /usr/share/themes >/dev/null 2>&1
+sleep 1
+   rm -rf /usr/share/plank/themes >/dev/null 2>&1
+sleep 1
    echo -e "\n${R} [${W}-${R}]${C} Installing icons and themes..\n${W}"
 sleep 1
    tar -xf $term/../home/UbuntuX/patches/p.tar.gz -C / \ || echo -e "\n${R}❌ Icon and Theme Installation failed!${W}\n"
